@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --background: linear-gradient(
+    -103.288deg,
+    #f3ece7 0%,
+    #efdfd3 17%,
+    #e0c5b1 79%,
+    #c8a790 100%
+  );
+  --primary: #404040;
+  --secondary: #fffbf7;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--primary);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --primary: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--primary);
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+}
