@@ -10,6 +10,7 @@
     #c8a790 100%
   );
   --primary: #404040;
+  --secondary: #fffbf7;
 }
 
 @theme inline {
