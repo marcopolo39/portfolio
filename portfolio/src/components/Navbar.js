@@ -7,25 +7,25 @@ export default function Navbar() {
       <div className="flex gap-6 text-[1.5rem] font-medium ">
         <Link
           href="/"
-          className="hover:text-[var(--secondary)] transition-colors duration-500"
+          className="hover:text-[var(--secondary)] transition-colors duration-300"
         >
           Home
         </Link>
         <Link
           href="/about"
-          className="hover:text-[var(--secondary)] transition-colors duration-500"
+          className="hover:text-[var(--secondary)] transition-colors duration-300"
         >
           About Me
         </Link>
         <Link
           href="/projects"
-          className="hover:text-[var(--secondary)] transition-colors duration-500"
+          className="hover:text-[var(--secondary)] transition-colors duration-300"
         >
           Personal Projects
         </Link>
         <Link
           href="/contact"
-          className="hover:text-[var(--secondary)] transition-colors duration-500"
+          className="hover:text-[var(--secondary)] transition-colors duration-300"
         >
           Contact Me
         </Link>
