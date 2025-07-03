@@ -7,25 +7,25 @@ export default function Navbar() {
       <div className="flex gap-6 text-[1.5rem] font-medium ">
         <Link
           href="/"
-          className="hover:text-[var(--secondary)] transition-colors duration-300"
+          className="transition-transform duration-300 hover:scale-105"
         >
           Home
         </Link>
         <Link
           href="/about"
-          className="hover:text-[var(--secondary)] transition-colors duration-300"
+          className="transition-transform duration-300 hover:scale-105"
         >
           About Me
         </Link>
         <Link
           href="/projects"
-          className="hover:text-[var(--secondary)] transition-colors duration-300"
+          className="transition-transform duration-300 hover:scale-105"
         >
           Personal Projects
         </Link>
         <Link
           href="/contact"
-          className="hover:text-[var(--secondary)] transition-colors duration-300"
+          className="transition-transform duration-300 hover:scale-105"
         >
           Contact Me
         </Link>
@@ -35,6 +35,7 @@ export default function Navbar() {
           href="https://www.linkedin.com/in/mmaldonado2/"
           target="_blank"
           rel="noopener noreferrer"
+          className="transition-transform duration-300 hover:scale-105"
         >
           <LinkedInLogoIcon className="w-[2rem] h-[2rem]" />
         </a>
@@ -42,6 +43,7 @@ export default function Navbar() {
           href="https://github.com/marcopolo39"
           target="_blank"
           rel="noopener noreferrer"
+          className="transition-transform duration-300 hover:scale-105"
         >
           <GitHubLogoIcon className="w-[2rem] h-[2rem]" />
         </a>

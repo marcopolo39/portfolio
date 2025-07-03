@@ -2,6 +2,7 @@ import { defineQuery } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 
 const HOMEPAGE_QUERY = defineQuery(
   `*[_type == 'homePage'][0]{title, description, profileImg}`
@@ -34,12 +35,18 @@ export default async function Home() {
             <div className="text-[2.25rem]">{homepageData.title}</div>
             <div className="max-w-[35rem] py-3">{homepageData.description}</div>
             <div className="flex justify-evenly w-full">
-              <button className="px-6 py-3 rounded-[15px] bg-[var(--primary)] text-[var(--secondary)]">
+              <Link
+                href="/about"
+                className="px-6 py-3 rounded-[15px] bg-[var(--primary)] text-[var(--secondary)] transition-transform duration-300 hover:scale-105"
+              >
                 Learn More
-              </button>
-              <button className="px-6 py-3 rounded-[15px] bg-[var(--primary)] text-[var(--secondary)]">
+              </Link>
+              <Link
+                href="/projects"
+                className="px-6 py-3 rounded-[15px] bg-[var(--primary)] text-[var(--secondary)] transition-transform duration-300 hover:scale-105"
+              >
                 Personal Projects
-              </button>
+              </Link>
             </div>
           </div>
         </div>
