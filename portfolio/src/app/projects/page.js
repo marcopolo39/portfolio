@@ -11,7 +11,6 @@ const PROJECTS_QUERY = defineQuery(
 
 export default async function Projects() {
   const projects = await client.fetch(PROJECTS_QUERY);
-  console.log(projects);
 
   return (
     <div className="flex justify-center w-full">
