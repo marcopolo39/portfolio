@@ -19,7 +19,7 @@ export default async function ProjectView({ params }) {
   return (
     <div className="flex justify-center w-full">
       <Navbar />
-      <div className="flex flex-col min-h-screen pt-25 px-15 gap-6 w-full">
+      <div className="flex flex-col pt-25 px-4 md:px-8 gap-6 w-full max-w-[80vw] mx-auto">
         <Link
           href="/projects"
           className="flex gap-2 hover:bg-[var(--secondary)] w-fit p-3 rounded-[10px]"
@@ -56,7 +56,7 @@ export default async function ProjectView({ params }) {
                 .quality(100)
                 .url()}
             ></img>
-            <div className="p-3 flex flex-col gap-3">
+            <div className="p-4 flex flex-col gap-4">
               <a
                 href="#"
                 className=" h-[2.5rem] bg-[var(--primary)] text-[var(--secondary)] rounded-[10px] border border-[#EFDFD3] flex items-center justify-center gap-2"
@@ -89,14 +89,14 @@ export default async function ProjectView({ params }) {
         <div className="w-full h-[1px] bg-[var(--secondary)]" />
         <div className="flex flex-col items-center">
           <div className="text-[2.5rem]">Demo Video</div>
-          <iframe
-            width="560"
-            height="315"
-            src={`https://www.youtube.com/embed/${getYouTubeVideoId(project.video.url)}`}
-            title="YouTube video player"
-            allowFullScreen
-            className="p-5"
-          ></iframe>
+          <div className="w-full max-w-4xl aspect-video p-5">
+            <iframe
+              src={`https://www.youtube.com/embed/${getYouTubeVideoId(project.video.url)}`}
+              title="YouTube video player"
+              allowFullScreen
+              className="p-5 w-full h-full"
+            ></iframe>
+          </div>
         </div>
         <div className="w-full h-[1px] bg-[var(--secondary)]" />
         <div className="flex flex-col items-center pb-[3rem]">
