@@ -3,16 +3,11 @@ import { client } from "@/sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
+import urlFor from "./utils/url";
 
 const HOMEPAGE_QUERY = defineQuery(
   `*[_type == 'homePage'][0]{title, description, profileImg}`
 );
-
-const builder = imageUrlBuilder(client);
-
-function urlFor(source) {
-  return builder.image(source);
-}
 
 export default async function Home() {
   const homepageData = await client.fetch(HOMEPAGE_QUERY);
