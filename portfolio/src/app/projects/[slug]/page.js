@@ -9,6 +9,11 @@ const PROJECT_DATA_QUERY = defineQuery(
   `*[_type == "projects" && slug.current == $slug][0]`
 );
 
+function getYouTubeVideoId(url) {
+  const urlObj = new URL(url);
+  return urlObj.searchParams.get("v");
+}
+
 export default async function ProjectView({ params }) {
   const project = await client.fetch(PROJECT_DATA_QUERY, await params);
   return (
@@ -33,20 +38,21 @@ export default async function ProjectView({ params }) {
             </div>
           ))}
         </div>
-        <div className="flex space-apart">
+        <div className="flex justify-between">
           <div>
-            <div>The Problem</div>
+            <div className="text-[2rem]">The Problem</div>
             <div>{project.problem}</div>
-            <div>The Solution</div>
+            <div className="text-[2rem]">The Solution</div>
             <div>{project.solution}</div>
-            <div>What I Learned</div>
+            <div className="text-[2rem]">What I Learned</div>
             <div>{project.outcome}</div>
           </div>
-          <div className="bg-[var(--secondary)]">
+          <div className="bg-[var(--secondary)] rounded-[10px]">
             <img
+              className="rounded-t-[10px]"
               src={urlFor(project.images[0])
-                .height(200)
-                .width(300)
+                .height(250)
+                .width(350)
                 .quality(100)
                 .url()}
             ></img>
@@ -78,6 +84,30 @@ export default async function ProjectView({ params }) {
                 <span>GitHub Repo</span>
               </a>
             </div>
+          </div>
+        </div>
+        <div className="w-full h-[1px] bg-[var(--secondary)]" />
+        <div className="flex flex-col items-center">
+          <div className="text-[2.5rem]">Demo Video</div>
+          <iframe
+            width="560"
+            height="315"
+            src={`https://www.youtube.com/embed/${getYouTubeVideoId(project.video.url)}`}
+            title="YouTube video player"
+            allowFullScreen
+            className="p-5"
+          ></iframe>
+        </div>
+        <div className="w-full h-[1px] bg-[var(--secondary)]" />
+        <div className="flex flex-col items-center pb-[3rem]">
+          <div className="text-[2.5rem]">Screenshots</div>
+          <div className="grid grid-cols-2 gap-8 p-5">
+            {project.images.map((img, index) => (
+              <img
+                key={index}
+                src={urlFor(img).height(400).width(600).quality(100).url()}
+              ></img>
+            ))}
           </div>
         </div>
       </div>
