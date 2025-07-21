@@ -46,7 +46,7 @@ export default async function Projects() {
               <div className="flex flex-row justify-center gap-4">
                 <a
                   href={project.githubLink}
-                  className="w-[145px] h-[40px] bg-[#FFF2E6] rounded-[10px] border border-[#EFDFD3] flex items-center justify-center gap-2"
+                  className="w-[145px] h-[40px] bg-[#FFF2E6] rounded-[10px] border border-[#EFDFD3] flex items-center justify-center gap-2 hover:bg-[#EFDFD3]"
                 >
                   <svg
                     width="20"
@@ -65,7 +65,7 @@ export default async function Projects() {
                 </a>
                 <Link
                   href={`projects/${project.slug.current}`}
-                  className="w-[145px] h-[40px] bg-[var(--primary)] text-[var(--secondary)] rounded-[10px] flex items-center justify-center gap-2"
+                  className="w-[145px] h-[40px] bg-[var(--primary)] text-[var(--secondary)] rounded-[10px] flex items-center justify-center gap-2 hover:bg-[var(--primary)]/95"
                 >
                   <BookOpen size={20} />
                   <span>Learn More</span>
