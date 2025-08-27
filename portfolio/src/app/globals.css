@@ -20,12 +20,13 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Dark mode styling disabled - keeping consistent appearance */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --primary: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
