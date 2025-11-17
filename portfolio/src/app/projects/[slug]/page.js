@@ -18,7 +18,6 @@ function getYouTubeVideoId(url) {
 export default async function ProjectView({ params }) {
   const project = await client.fetch(PROJECT_DATA_QUERY, await params);
 
-  console.log(project);
   return (
     <div className="flex justify-center w-full">
       <Navbar />
