@@ -32,10 +32,10 @@ export default async function Projects() {
             ></img>
             <div className="w-full flex flex-col">
               <div className="text-center text-[2.5rem]">{project.title}</div>
-              <div className="flex flex-row justify-center gap-3">
+              <div className="flex flex-row flex-wrap gap-3">
                 {project.tags.map((tag) => (
                   <div
-                    className=" bg-[#FFF2E6] px-2 rounded-[10px] font-semibold border border-[#EFDFD3]"
+                    className=" bg-[#FFF2E6] px-2 rounded-[10px] font-semibold border border-[#EFDFD3] whitespace-nowrap"
                     key={tag}
                   >
                     {tag}

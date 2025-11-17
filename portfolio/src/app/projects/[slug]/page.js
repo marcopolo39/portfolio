@@ -16,6 +16,8 @@ function getYouTubeVideoId(url) {
 
 export default async function ProjectView({ params }) {
   const project = await client.fetch(PROJECT_DATA_QUERY, await params);
+
+  console.log(project);
   return (
     <div className="flex justify-center w-full">
       <Navbar />
@@ -28,10 +30,10 @@ export default async function ProjectView({ params }) {
           <span>Back to Projects</span>
         </Link>
         <div className="text-[3rem] leading-none">{project.title}</div>
-        <div className="flex flex-row gap-3">
+        <div className="flex flex-row flex-wrap gap-3">
           {project.tags.map((tag) => (
             <div
-              className=" bg-[#FFF2E6] px-2 rounded-[10px] font-semibold border border-[#EFDFD3]"
+              className=" bg-[#FFF2E6] px-2 rounded-[10px] font-semibold border border-[#EFDFD3] whitespace-nowrap"
               key={tag}
             >
               {tag}
@@ -39,7 +41,7 @@ export default async function ProjectView({ params }) {
           ))}
         </div>
         <div className="flex justify-between">
-          <div>
+          <div className="w-[60%]">
             <div className="text-[2rem]">The Problem</div>
             <div>{project.problem}</div>
             <div className="text-[2rem]">The Solution</div>
@@ -47,9 +49,9 @@ export default async function ProjectView({ params }) {
             <div className="text-[2rem]">What I Learned</div>
             <div>{project.outcome}</div>
           </div>
-          <div className="bg-[var(--secondary)] rounded-[10px]">
+          <div className="bg-[var(--secondary)] rounded-[10px] self-start sticky top-20">
             <img
-              className="rounded-t-[10px]"
+              className="rounded-t-[10px] w-full h-auto object-cover"
               src={urlFor(project.images[0])
                 .height(250)
                 .width(350)
@@ -58,7 +60,7 @@ export default async function ProjectView({ params }) {
             ></img>
             <div className="p-4 flex flex-col gap-4">
               <a
-                href="#"
+                href={project.demoLink}
                 className=" h-[2.5rem] bg-[var(--primary)] text-[var(--secondary)] rounded-[10px] border border-[#EFDFD3] flex items-center justify-center gap-2"
               >
                 <ExternalLink size={20} />
@@ -103,10 +105,13 @@ export default async function ProjectView({ params }) {
           <div className="text-[2.5rem]">Screenshots</div>
           <div className="grid grid-cols-2 gap-8 p-5">
             {project.images.map((img, index) => (
-              <img
-                key={index}
-                src={urlFor(img).height(400).width(600).quality(100).url()}
-              ></img>
+              <div key={index} className="w-full overflow-hidden">
+                <img
+                  className="w-full h-auto object-contain"
+                  src={urlFor(img).width(1200).quality(100).url()}
+                  alt={`Screenshot ${index + 1}`}
+                ></img>
+              </div>
             ))}
           </div>
         </div>
