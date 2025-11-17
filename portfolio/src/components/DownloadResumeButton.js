@@ -45,7 +45,7 @@ export default function ResumeDownloadButton() {
   return (
     <button
       onClick={handleDownload}
-      className="flex gap-3 px-4 py-1.5 rounded-[15px] bg-[var(--primary)] text-[var(--secondary)] cursor-pointer hover:bg-[var(--primary)]/95"
+      className="flex gap-3 px-4 py-2 rounded-[15px] bg-[var(--primary)] text-[var(--secondary)] cursor-pointer hover:bg-[var(--primary)]/95"
       disabled={loading}
     >
       <Download />

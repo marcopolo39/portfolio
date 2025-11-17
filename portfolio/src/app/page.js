@@ -28,7 +28,9 @@ export default async function Home() {
           <div>
             <div className="text-[4rem]">Marco Maldonado</div>
             <div className="text-[2.25rem]">{homepageData.title}</div>
-            <div className="max-w-[35rem] py-3">{homepageData.description}</div>
+            <div className="max-w-[35rem] py-3 mb-6">
+              {homepageData.description}
+            </div>
             <div className="flex justify-evenly w-full">
               <Link
                 href="/about"
