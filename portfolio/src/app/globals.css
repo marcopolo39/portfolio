@@ -18,17 +18,29 @@
   --color-foreground: var(--primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Dark mode styling disabled - keeping consistent appearance */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --primary: #ededed;
   }
-}
+} */
 
 body {
-  background: var(--background);
-  color: var(--primary);
+  background: var(--background) !important;
+  color: var(--primary) !important;
   font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+
+/* Force light mode appearance */
+html {
+  color-scheme: light;
+}
+
+/* Override any dark mode styles */
+* {
+  color-scheme: light !important;
 }

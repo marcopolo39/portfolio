@@ -34,13 +34,13 @@ export default async function Home() {
             <div className="flex justify-evenly w-full">
               <Link
                 href="/about"
-                className="px-6 py-3 rounded-[15px] bg-[var(--primary)] text-[var(--secondary)] transition-transform duration-300 hover:scale-105"
+                className="px-6 py-3 rounded-[15px] bg-[var(--primary)] text-[var(--secondary)] transition-transform duration-300 hover:bg-[var(--primary)]/95"
               >
                 Learn More
               </Link>
               <Link
                 href="/projects"
-                className="px-6 py-3 rounded-[15px] bg-[var(--primary)] text-[var(--secondary)] transition-transform duration-300 hover:scale-105"
+                className="px-6 py-3 rounded-[15px] bg-[var(--primary)] text-[var(--secondary)] transition-transform duration-300 hover:bg-[var(--primary)]/95"
               >
                 Personal Projects
               </Link>

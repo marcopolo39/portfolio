@@ -54,7 +54,7 @@ export default async function Projects() {
                 </a>
                 <Link
                   href={`projects/${project.slug.current}`}
-                  className="w-[145px] h-[40px] bg-[var(--primary)] text-[var(--secondary)] rounded-[10px] flex items-center justify-center gap-2"
+                  className="w-[145px] h-[40px] bg-[var(--primary)] text-[var(--secondary)] rounded-[10px] flex items-center justify-center gap-2 hover:bg-[var(--primary)]/95"
                 >
                   <BookOpen size={20} />
                   <span>Learn More</span>
