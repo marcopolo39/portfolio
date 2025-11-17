@@ -20,7 +20,7 @@ export default async function Projects() {
         {projects.map((project) => (
           <div
             key={project.title}
-            className="flex bg-[var(--secondary)] rounded-[25px] px-3 py-3 w-[70rem] gap-6"
+            className="flex bg-[var(--secondary)]/30 backdrop-blur-md rounded-[25px] px-3 py-3 w-[70rem] gap-6 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300"
           >
             <img
               className="rounded-[25px]"
@@ -32,10 +32,10 @@ export default async function Projects() {
             ></img>
             <div className="w-full flex flex-col">
               <div className="text-center text-[2.5rem]">{project.title}</div>
-              <div className="flex flex-row flex-wrap gap-3">
+              <div className="flex flex-row flex-wrap gap-3 mb-4">
                 {project.tags.map((tag) => (
                   <div
-                    className=" bg-[#FFF2E6] px-2 rounded-[10px] font-semibold border border-[#EFDFD3] whitespace-nowrap"
+                    className=" bg-[#FFF2E6]/40 backdrop-blur-md px-2 py-1.5 rounded-[10px] font-semibold border border-white/40 whitespace-nowrap shadow-md"
                     key={tag}
                   >
                     {tag}
@@ -46,7 +46,7 @@ export default async function Projects() {
               <div className="flex flex-row justify-center gap-4">
                 <a
                   href={project.githubLink}
-                  className="w-[145px] h-[40px] bg-[#FFF2E6] rounded-[10px] border border-[#EFDFD3] flex items-center justify-center gap-2"
+                  className="w-[145px] h-[40px] bg-[#FFF2E6]/40 backdrop-blur-sm rounded-[10px] border border-white/30 flex items-center justify-center gap-2 shadow-sm hover:bg-[#FFF2E6]/60 hover:shadow-md transition-all duration-300"
                 >
                   <svg
                     width="20"

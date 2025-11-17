@@ -26,6 +26,8 @@ export default async function About() {
           {workExperience.map((item, index) => (
             <div className="grid grid-cols-[auto_1fr] gap-6 w-full" key={index}>
               <div className="relative w-full h-full flex justify-center mr-[1.5rem]">
+                {/* <div className="absolute w-[0.25rem] h-full bg-[var(--secondary)]/30 backdrop-blur-sm"></div>
+              <div className="absolute bg-[var(--primary)]/80 backdrop-blur-sm rounded-full border-[0.25rem] border-white/30 p-[0.25rem] shadow-md"> */}
                 <div className="absolute w-[0.25rem] h-full bg-[var(--secondary)]"></div>
                 <div className="absolute bg-[var(--primary)] rounded-full border-[0.25rem] border-[var(--secondary)] p-[0.25rem]">
                   <Briefcase color="var(--secondary)" size={16} />

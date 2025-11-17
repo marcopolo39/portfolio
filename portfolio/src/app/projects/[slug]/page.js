@@ -24,7 +24,7 @@ export default async function ProjectView({ params }) {
       <div className="flex flex-col pt-25 px-4 md:px-8 gap-6 w-full max-w-[80vw] mx-auto">
         <Link
           href="/projects"
-          className="flex gap-2 hover:bg-[var(--secondary)] w-fit p-3 rounded-[10px]"
+          className="flex gap-2 hover:bg-[var(--secondary)]/50 w-fit p-3 rounded-[10px] hove:border hover:border-white/20 hover:shadow-sm transition-all duration-300"
         >
           <ArrowLeft />
           <span>Back to Projects</span>
@@ -33,7 +33,7 @@ export default async function ProjectView({ params }) {
         <div className="flex flex-row flex-wrap gap-3">
           {project.tags.map((tag) => (
             <div
-              className=" bg-[#FFF2E6] px-2 rounded-[10px] font-semibold border border-[#EFDFD3] whitespace-nowrap"
+              className=" bg-[#FFF2E6]/40 backdrop-blur-md px-2 py-1.5 rounded-[10px] font-semibold border border-white/40 whitespace-nowrap shadow-md"
               key={tag}
             >
               {tag}
@@ -49,7 +49,7 @@ export default async function ProjectView({ params }) {
             <div className="text-[2rem]">What I Learned</div>
             <div>{project.outcome}</div>
           </div>
-          <div className="bg-[var(--secondary)] rounded-[10px] self-start sticky top-20">
+          <div className="bg-[var(--secondary)]/30 backdrop-blur-md rounded-[10px] self-start sticky top-20 border border-white/20 shadow-lg">
             <img
               className="rounded-t-[10px] w-full h-auto object-cover"
               src={urlFor(project.images[0])
@@ -68,7 +68,7 @@ export default async function ProjectView({ params }) {
               </a>
               <a
                 href={project.githubLink}
-                className="h-[2.5rem] bg-[#FFF2E6] rounded-[10px] border border-[#EFDFD3] flex items-center justify-center gap-2"
+                className="h-[2.5rem] bg-[#FFF2E6]/40 backdrop-blur-sm rounded-[10px] border border-white/30 flex items-center justify-center gap-2 shadow-sm hover:bg-[#FFF2E6]/60 hover:shadow-md transition-all duration-300"
               >
                 <svg
                   width="20"
@@ -91,12 +91,12 @@ export default async function ProjectView({ params }) {
         <div className="w-full h-[1px] bg-[var(--secondary)]" />
         <div className="flex flex-col items-center">
           <div className="text-[2.5rem]">Demo Video</div>
-          <div className="w-full max-w-4xl aspect-video p-5">
+          <div className="w-full max-w-4xl aspect-video p-5 bg-[var(--secondary)]/20 backdrop-blur-sm rounded-[15px] border border-white/20 shadow-lg">
             <iframe
               src={`https://www.youtube.com/embed/${getYouTubeVideoId(project.video.url)}`}
               title="YouTube video player"
               allowFullScreen
-              className="p-5 w-full h-full"
+              className="p-5 w-full h-full rounded-[10px]"
             ></iframe>
           </div>
         </div>
@@ -105,9 +105,12 @@ export default async function ProjectView({ params }) {
           <div className="text-[2.5rem]">Screenshots</div>
           <div className="grid grid-cols-2 gap-8 p-5">
             {project.images.map((img, index) => (
-              <div key={index} className="w-full overflow-hidden">
+              <div
+                key={index}
+                className="w-full overflow-hidden bg-[var(--secondary)]/20 backdrop-blur-sm rounded-[15px] border border-white/20 shadow-lg p-2"
+              >
                 <img
-                  className="w-full h-auto object-contain"
+                  className="w-full h-auto object-contain rounded-[10px]"
                   src={urlFor(img).width(1200).quality(100).url()}
                   alt={`Screenshot ${index + 1}`}
                 ></img>
